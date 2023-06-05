@@ -1,5 +1,9 @@
 # napari-registration
 
+A napari plugin for manual spatial registration of two images
+
+===
+
 [![License MIT](https://img.shields.io/pypi/l/napari-registration.svg?color=green)](https://github.com/codyheiser/napari-registration/raw/main/LICENSE)
 [![PyPI](https://img.shields.io/pypi/v/napari-registration.svg?color=green)](https://pypi.org/project/napari-registration)
 [![Python Version](https://img.shields.io/pypi/pyversions/napari-registration.svg?color=green)](https://python.org)
@@ -32,7 +36,6 @@ You can install `napari-registration` via [pip]:
 To install latest development version :
 
     pip install git+https://github.com/codyheiser/napari-registration.git
-
 
 ## Contributing
 
