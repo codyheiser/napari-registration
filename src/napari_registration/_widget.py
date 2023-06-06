@@ -10,7 +10,7 @@ from typing import TYPE_CHECKING
 
 from magicgui import magic_factory
 from qtpy.QtWidgets import QHBoxLayout, QPushButton, QWidget
-from justin_functions import *
+from justin_functions import on_transform_changed_drag
 
 if TYPE_CHECKING:
     import napari
@@ -39,10 +39,6 @@ class create_registration_viewer(QWidget):
 
         self.setLayout(QHBoxLayout())
         self.layout().addWidget(btn)
-
-    def on_transform_changed_drag(self, event):
-        """record affine transform as ST is manipulated"""
-        self.viewer.layers.selection.active.affine = event.value
 
     def _on_click(self):
         """
