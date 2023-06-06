@@ -10,7 +10,7 @@ from typing import TYPE_CHECKING
 
 from magicgui import magic_factory
 from qtpy.QtWidgets import QHBoxLayout, QPushButton, QWidget
-from justin_functions import on_transform_changed_drag
+from napari.utils.transforms import Affine
 
 if TYPE_CHECKING:
     import napari
@@ -32,6 +32,9 @@ class create_registration_viewer(QWidget):
         self.viewer.overlays.interaction_box.show_vertices = True
         self.viewer.overlays.interaction_box.show_handle = True
         self.viewer.overlays.interaction_box.allow_new_selection = False
+        # define inner function for capturing affine event
+        def on_transform_changed_drag(event):
+            self.viewer.layers.selection.active.affine = event.value
         self.viewer.overlays.interaction_box.events.transform_drag.connect(on_transform_changed_drag)
 
         btn = QPushButton("Capture Affine")
