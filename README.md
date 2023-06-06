@@ -1,9 +1,5 @@
 # napari-registration
 
-A napari plugin for manual spatial registration of two images
-
-===
-
 [![License MIT](https://img.shields.io/pypi/l/napari-registration.svg?color=green)](https://github.com/codyheiser/napari-registration/raw/main/LICENSE)
 [![PyPI](https://img.shields.io/pypi/v/napari-registration.svg?color=green)](https://pypi.org/project/napari-registration)
 [![Python Version](https://img.shields.io/pypi/pyversions/napari-registration.svg?color=green)](https://python.org)
@@ -11,7 +7,7 @@ A napari plugin for manual spatial registration of two images
 [![codecov](https://codecov.io/gh/codyheiser/napari-registration/branch/main/graph/badge.svg)](https://codecov.io/gh/codyheiser/napari-registration)
 [![napari hub](https://img.shields.io/endpoint?url=https://api.napari-hub.org/shields/napari-registration)](https://napari-hub.org/plugins/napari-registration)
 
-A plugin for manual spatial registration of two images
+A [napari] plugin for manual spatial registration of two images
 
 ----------------------------------
 

@@ -14,9 +14,9 @@ contributions:
     - id: napari-registration.make_sample_data
       python_name: napari_registration._sample_data:make_sample_data
       title: Load sample data from Image Registration
-    - id: napari-registration.make_qwidget
-      python_name: napari_registration._widget:ExampleQWidget
-      title: Make example QWidget
+    - id: napari-registration.make_registration_widget
+      python_name: napari_registration._widget:create_registration_viewer
+      title: Setup registration viewer as QWidget
     - id: napari-registration.make_magic_widget
       python_name: napari_registration._widget:example_magic_widget
       title: Make example magic widget
@@ -39,8 +39,8 @@ contributions:
       display_name: Image Registration
       key: unique_id.1
   widgets:
-    - command: napari-registration.make_qwidget
-      display_name: Example QWidget
+    - command: napari-registration.make_registration_widget
+      display_name: Setup registration viewer as QWidget
     - command: napari-registration.make_magic_widget
       display_name: Example Magic Widget
     - command: napari-registration.make_func_widget
