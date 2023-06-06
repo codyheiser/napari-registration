@@ -2,10 +2,6 @@ import napari
 import numpy as np
 from napari.utils.transforms import Affine
 
-def on_transform_changed_drag(event):
-    """record affine transform as ST is manipulated"""
-    viewer.layers.selection.active.affine = event.value
-
 
 def registration_viewer(bg_img, fg_img):
     """
@@ -27,6 +23,10 @@ def registration_viewer(bg_img, fg_img):
     viewer.overlays.interaction_box.show_vertices = True
     viewer.overlays.interaction_box.show_handle = True
     viewer.overlays.interaction_box.allow_new_selection = False
+    # define inner function for capturing affine event
+    def on_transform_changed_drag(event):
+        """record affine transform as ST is manipulated"""
+        viewer.layers.selection.active.affine = event.value
     viewer.overlays.interaction_box.events.transform_drag.connect(on_transform_changed_drag)
     # open viewer
     napari.run()

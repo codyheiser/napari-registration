@@ -16,7 +16,7 @@ if TYPE_CHECKING:
     import napari
 
 
-class create_registration_viewer(QWidget):
+class registration_viewer_QWidget(QWidget):
     # your QWidget.__init__ can optionally request the napari viewer instance
     # in one of two ways:
     # 1. use a parameter called `napari_viewer`, as done here
@@ -34,6 +34,7 @@ class create_registration_viewer(QWidget):
         self.viewer.overlays.interaction_box.allow_new_selection = False
         # define inner function for capturing affine event
         def on_transform_changed_drag(event):
+            """record affine transform as ST is manipulated"""
             self.viewer.layers.selection.active.affine = event.value
         self.viewer.overlays.interaction_box.events.transform_drag.connect(on_transform_changed_drag)
 
@@ -66,7 +67,8 @@ class create_registration_viewer(QWidget):
             self.viewer.layers.selection.active.affine.scale[1],
             1,  # for 3D image
         )
-        return affine, scale
+        print("Affine matrix: {}".format(affine))
+        #return affine, scale
 
 
 @magic_factory
